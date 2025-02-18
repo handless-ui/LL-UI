@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LL-UI | 轮播</title>
+    <script type="module" src="../../src/index.js"></script>
+    <script>
+
+        function doit(eventName, event) {
+            // console.log(eventName, event);
+            console.log(event.detail.value);
+
+            var dotEls = document.getElementsByClassName("dot");
+            for (var index = 0; index < dotEls.length; index++) {
+                dotEls[index].setAttribute("active", index == event.detail.value ? "yes" : "no");
+            }
+        }
+
+        function setValue(value) {
+            document.getElementById("myswiper").setAttribute("value", value);
+        }
+
+    </script>
+    <style>
+        .ui-swiper {
+            width: 320px;
+            height: 140px;
+            display: block;
+            margin: 50px auto;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .content {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+        }
+
+        .indicator {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+
+        .indicator>.dot {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: rgb(255, 255, 255);
+            color: #000;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+        }
+
+        .indicator>.dot[active='yes'] {
+            background-color: rgb(0, 0, 0);
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <ui-swiper class="ui-swiper" value="2" onChange="doit('change',event)" onInput="doit('input',event)"> -->
+    <ui-swiper id="myswiper" class="ui-swiper" value="2" onChange="doit('change',event)">
+        <ui-swiper-item>
+            <div class="content" style="background-image: url('../assets/swiper1.jpeg');"></div>
+        </ui-swiper-item>
+        <ui-swiper-item>
+            <div class="content" style="background-image: url('../assets/swiper2.jpeg');"></div>
+        </ui-swiper-item>
+        <ui-swiper-item>
+            <div class="content" style="background-image: url('../assets/swiper3.jpeg');"></div>
+        </ui-swiper-item>
+        <ui-swiper-item>
+            <div class="content" style="background-image: url('../assets/swiper4.jpeg');"></div>
+        </ui-swiper-item>
+
+        <!-- 底部提示符 -->
+        <div id="myindicator" class="indicator">
+            <span onclick="setValue(0)" class="dot">1</span>
+            <span onclick="setValue(1)" class="dot">2</span>
+            <span onclick="setValue(2)" class="dot">3</span>
+            <span onclick="setValue(3)" class="dot">4</span>
+        </div>
+    </ui-swiper>
+
+</body>
+
+</html>

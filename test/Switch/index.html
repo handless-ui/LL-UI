@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LL-UI | 开关</title>
+    <script type="module" src="../../src/index.js"></script>
+    <script>
+
+        function setValue(value) {
+            document.getElementById("myswitch").setAttribute("value", value);
+        }
+
+        function doit(eventName, event) {
+            console.log(eventName, event);
+        }
+
+    </script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <ui-switch id="myswitch" value="on" onChange="doit('change',event)" onInput="doit('input',event)"></ui-switch>
+
+    <button onClick="setValue('on')">
+        打开
+    </button>
+
+    <button onClick="setValue('off')">
+        关闭
+    </button>
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LL-UI | 弹出层</title>
+    <script type="module" src="../../src/index.js"></script>
+    <script>
+
+        function setValue(value) {
+            document.getElementById("mypopup").setAttribute("value", value);
+        }
+
+    </script>
+    <style>
+        ui-popup {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .demo-value {
+            width: 200px;
+            line-height: 140px;
+            text-align: center;
+            display: inline-block;
+            background-color: red;
+            color: white;
+            margin: calc(50vh - 70px) calc(50vw - 100px);
+        }
+
+        ui-popup:not([value='on'])>* {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ui-popup id="mypopup" value="off">
+
+        <div class="demo-value">
+            你好呀！
+            <button onClick="setValue('off')">关闭</button>
+        </div>
+
+    </ui-popup>
+
+    <button onClick="setValue('on')">
+        打开
+    </button>
+
+</body>
+
+</html>
