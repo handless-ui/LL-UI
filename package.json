@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "sideEffects": false,
   "scripts": {
-    "dev": "oipage-cli -c ./oipage.config.js"
+    "dev": "oipage-cli serve -p 20000"
   },
   "repository": {
     "type": "git",
@@ -25,7 +25,6 @@
   },
   "homepage": "https://github.com/handless-ui/LL-UI#readme",
   "dependencies": {
-    "oipage": "^0.2.0",
-    "vislite": "^1.3.0"
+    "oipage": "^1.2.0"
   }
 }

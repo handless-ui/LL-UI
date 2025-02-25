@@ -1,5 +1,5 @@
-import { setStyle } from "oipage/browserjs/setStyle/index.js";
-import { animation } from "oipage/corejs/animation/index.js";
+import { setStyle } from "oipage/web/style/index.js";
+import { animation } from "oipage/web/animation/index.js";
 
 export default class Swiper extends HTMLElement {
 

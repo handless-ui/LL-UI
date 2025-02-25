@@ -1,4 +1,4 @@
-import { setStyle } from "oipage/browserjs/setStyle/index.js";
+import { setStyle } from "oipage/web/style/index.js";
 
 export default class Switch extends HTMLElement {
 
